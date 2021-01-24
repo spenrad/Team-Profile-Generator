@@ -96,6 +96,57 @@ var terminate = [
     }
   ];
 
+var team = [];
+
+async function askQs() {
+    const answers = await inquirer.prompt(classQ);
+    if (answers.class === "Engineer") {
+      const engineer = await inquirer.prompt(engineerQs);
+        let engineerObj = new Engineer(
+        engineer.name,
+        engineer.id,
+        engineer.email,
+        engineer.github
+      );
+      team.push(engineerObj);
+    } else if (answers.class === "Intern") {
+      const intern = await inquirer.prompt(internQs);
+        let internObj = new Intern(
+        intern.name,
+        intern.id,
+        intern.email,
+        intern.school
+      );
+      team.push(internObj);
+    } else {
+       const manager = await inquirer.prompt(managerQs);
+        let managerObj = new Manager(
+        manager.name,
+        manager.id,
+        manager.email,
+        manager.officeNumber
+      );
+      team.push(managerObj);
+    }
+  
+    const finalAnswer = await inquirer.prompt(terminate);
+    if (finalAnswer.cont == true) {
+      askQs();
+    } else {
+      console.log(team);
+  
+      var data = render(team);
+      writeToFile("team.html", data);
+    }
+}
+
+askQs();
+
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) throw err;
+  });
+}
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
