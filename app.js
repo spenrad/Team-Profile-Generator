@@ -79,6 +79,23 @@ var internQs = [
     },
   ];
 
+var classQ = [
+    {
+      type: "list",
+      name: "class",
+      message: "Which type of emloyee are you inputting data for?",
+      choices: ["Engineer", "Intern", "Manager"],
+    }
+  ];
+  
+var terminate = [
+    {
+      type: "confirm",
+      name: "cont",
+      message: "Add another employee?",
+    }
+  ];
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
