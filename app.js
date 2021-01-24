@@ -10,6 +10,75 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+var engineerQs = [
+    {
+      type: "input",
+      name: "name",
+      message: "What is your Engineer's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your Engineer's ID number?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your Engineer's ID e-mail address?",
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "What is your Engineer's GitHub username?",
+    },
+  ];
+  
+var managerQs = [
+    {
+      type: "input",
+      name: "name",
+      message: "What is your Manager's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your Manager's ID number?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your Manager's ID e-mail address?",
+    },
+    {
+      type: "input",
+      name: "officeNumber",
+      message: "What is your Manager's office number?",
+    },
+  ];
+  
+var internQs = [
+    {
+      type: "input",
+      name: "name",
+      message: "What is your Intern's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your Intern's ID number?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your Intern's ID e-mail address?",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "What is your Intern's school?",
+    },
+  ];
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
